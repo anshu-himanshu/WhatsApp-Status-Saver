@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Open Whatsapp"
+        android:id="@+id/optOpenWhatsApp"
+        android:icon="@drawable/whatsapp_logo"
+        android:iconTint="@color/white"/>
+
+    <item android:title="Refresh"
+        android:id="@+id/optRefresh"
+        android:icon="@drawable/ic_refresh"
+        android:iconTint="@color/white"/>
+
+
+</menu>
