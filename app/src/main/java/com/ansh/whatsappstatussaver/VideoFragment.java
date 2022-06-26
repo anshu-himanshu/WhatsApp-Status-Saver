@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.ansh.whatsappstatussaver.WhatsappStatusModel;
 import com.ansh.whatsappstatussaver.WhatsappVideosAdapter;
@@ -21,7 +23,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class VideoFragment extends Fragment {
+public class VideoFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     private FragmentVideoBinding binding;
     private ArrayList<WhatsappStatusModel> list;
@@ -29,17 +31,24 @@ public class VideoFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_video, container, false);
 
+        binding.refreshLayout.setRefreshing(true);
 
         list = new ArrayList<>();
+
+
+        binding.refreshLayout.setOnRefreshListener(VideoFragment.this);
         getData();
 
+        adapter = new WhatsappVideosAdapter(list, getActivity());
+        binding.rvVideoStatus.setAdapter(adapter);
         binding.refreshLayout.setRefreshing(false);
         return binding.getRoot();
+
 
     }
 
@@ -48,6 +57,7 @@ public class VideoFragment extends Fragment {
         WhatsappStatusModel model;
         String targetPath;
         String targetPathBusiness;
+
 
 
         if (SDK_INT >= Build.VERSION_CODES.R) {
@@ -62,53 +72,46 @@ public class VideoFragment extends Fragment {
         File targetDirector = new File(targetPath);
         File[] allFiles = targetDirector.listFiles();
 
-        // for WhatsApp Business
+
+
+
+                if (allFiles != null) {
+                    Arrays.sort(allFiles, (o1, o2) -> {
+                        return Long.compare(o2.lastModified(), o1.lastModified());
+                    });
+                }
+
+                if (allFiles != null) {
+                    for (int i = 0; i < allFiles.length; i++) {
+                        File file = allFiles[i];
+
+                        if (Uri.fromFile(file).toString().endsWith(".mp4")) {
+                            model = new WhatsappStatusModel("whatsApp" + i, Uri.fromFile(file), allFiles[i].getAbsolutePath(), file.getName());
+                            list.add(model);
+                        }
+                    }
+                }
+
+
 
 
         if (SDK_INT >= Build.VERSION_CODES.R) {
             targetPathBusiness = Environment.getExternalStorageDirectory() +
-                    File.separator + "Android/media/com.whatsapp/WhatsApp/Media/.Statuses";
+                    File.separator + "Android/media/com.whatsapp/WhatsApp Business/Media/.Statuses";
         } else {
             targetPathBusiness = Environment.getExternalStorageDirectory() +
-                    File.separator + "WhatsApp/Media/.Statuses";
+                    File.separator + "WhatsApp Business/Media/.Statuses";
         }
         File targetDirectorBusiness = new File(targetPathBusiness);
         File[] allFilesBusiness = targetDirectorBusiness.listFiles();
 
 
-        if (allFiles != null) {
-            Arrays.sort(allFiles, (o1, o2) -> {
-                if (o1.lastModified() > o2.lastModified())
-                    return -1;
-                else if (o1.lastModified() < o2.lastModified())
-                    return +1;
-                else
-                    return 0;
-            });
-        }
 
-        if (allFiles != null) {
-            for (int i = 0; i < allFiles.length; i++) {
-                File file = allFiles[i];
-
-                if (Uri.fromFile(file).toString().endsWith(".mp4")) {
-                    model = new WhatsappStatusModel("whatsApp" + i, Uri.fromFile(file), allFiles[i].getAbsolutePath(), file.getName());
-                    list.add(model);
-                }
-            }
-        }
-
-        // for WhatsApp Business
 
 
         if (allFilesBusiness != null) {
             Arrays.sort(allFilesBusiness, ((o1, o2) -> {
-                if (o1.lastModified() > o2.lastModified())
-                    return -1;
-                else if (o1.lastModified() < o2.lastModified())
-                    return +1;
-                else
-                    return 0;
+                return Long.compare(o2.lastModified(), o1.lastModified());
             }));
         }
 
@@ -120,16 +123,19 @@ public class VideoFragment extends Fragment {
                 }
 
                 if (Uri.fromFile(file).toString().endsWith(".mp4")) {
-                    model = new WhatsappStatusModel("whatsBusiness " + i, Uri.fromFile(file),
-                            allFilesBusiness[i].getAbsolutePath(), file.getName());
 
                 }
             }
         }
-        adapter = new WhatsappVideosAdapter(list, getActivity());
-        binding.rvVideoStatus.setAdapter(adapter);
+
 
     }
 
 
+    @Override
+    public void onRefresh() {
+        list.clear();
+        getData();
+        binding.refreshLayout.setRefreshing(false);
+    }
 }

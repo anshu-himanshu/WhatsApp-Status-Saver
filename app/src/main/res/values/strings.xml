@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Status Saver</string>
+    <string name="app_logo">app logo</string>
+    <string name="whatsapp_nstatus_saver">WhatsApp\nStatus Saver</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="normal">( normal )</string>
+    <string name="whatsapp_nbusiness">WhatsApp\nBusiness</string>
+    <string name="about_this_app">About this App</string>
 </resources>

@@ -29,7 +29,7 @@ public class PermissionActivity extends AppCompatActivity {
             showPermissionDialog();
             finish();
         } else {
-            Intent intent = new Intent(PermissionActivity.this, StatusActivity.class);
+            Intent intent = new Intent(PermissionActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -42,7 +42,7 @@ public class PermissionActivity extends AppCompatActivity {
             try {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
                 intent.addCategory("android.intent.category.DEFAULT");
-                intent.setData(Uri.parse(String.format("package:%s", new Object[]{getApplicationContext().getPackageName()})));
+                intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
                 startActivityForResult(intent, 2000);
             } catch (Exception e) {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
@@ -80,11 +80,6 @@ public class PermissionActivity extends AppCompatActivity {
                 boolean write = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 boolean read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
 
-                if (read && write) {
-
-                } else {
-
-                }
             }
         }
 

@@ -3,6 +3,7 @@ package com.ansh.whatsappstatussaver;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,9 +21,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
+
+
         binding.reWhatsAppNormal.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PermissionActivity.class);
+            Intent intent = new Intent(MainActivity.this, StatusActivity.class);
             startActivity(intent);
         });
+        binding.reWhatsAppBusiness.setOnClickListener(v -> {
+
+           Toast.makeText(MainActivity.this, "Function un Implementd",Toast.LENGTH_SHORT).show();
+        });
+        binding.relAbout.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Function un Implementd",Toast.LENGTH_SHORT).show();
+        });
+       binding.relMoreApps.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Function un Implementd",Toast.LENGTH_SHORT).show();
+        });
+       binding.relPrivacy.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Function un Implementd",Toast.LENGTH_SHORT).show();
+        });
+       binding.relRatings.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Function un Implementd",Toast.LENGTH_SHORT).show();
+        });
+      binding.relTermsAndCondition.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Function un Implementd",Toast.LENGTH_SHORT).show();
+        });
+
     }
 }

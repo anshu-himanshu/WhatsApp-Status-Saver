@@ -48,11 +48,10 @@
                     android:gravity="center"
                     android:outlineAmbientShadowColor="@color/black"
                     android:padding="5dp"
-                    android:text="@string/whatsapp_nstatus_saver"
+                    android:text="WhatsApp\nStatus Saver"
                     android:textColor="#174A04"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    tools:targetApi="p" />
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
@@ -69,8 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:orientation="horizontal"
-            android:weightSum="2"
-            android:baselineAligned="false">
+            android:weightSum="2">
 
             <RelativeLayout
                 android:id="@+id/reWhatsAppNormal"
@@ -83,7 +81,6 @@
                 android:backgroundTint="#05317C">
 
                 <ImageView
-                    android:contentDescription="@string/app_logo"
                     android:id="@+id/whatsappIcon"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
@@ -96,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/whatsappIcon"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/whatsapp"
+                    android:text="WhatsApp"
                     android:textColor="#677BED"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -106,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv1"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/normal"
+                    android:text="( normal )"
                     android:textColor="#677BED"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -126,7 +123,6 @@
                 android:backgroundTint="#0A400C">
 
                 <ImageView
-                    android:contentDescription="@string/app_logo"
                     android:id="@+id/whatsappIcon2"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
@@ -139,7 +135,7 @@
                     android:layout_below="@id/whatsappIcon2"
                     android:layout_centerHorizontal="true"
                     android:gravity="center"
-                    android:text="@string/whatsapp_nbusiness"
+                    android:text="WhatsApp\nBusiness"
                     android:textColor="#6CC594"
                     android:textSize="22sp" />
 
@@ -171,7 +167,6 @@
                     android:backgroundTint="@color/backgroundColor">
 
                     <ImageView
-                        android:contentDescription="@string/app_logo"
                         android:id="@+id/infoIcon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
@@ -193,7 +188,7 @@
                         android:layout_toStartOf="@id/arrow1"
                         android:layout_toEndOf="@id/infoIcon"
                         android:gravity="center"
-                        android:text="@string/about_this_app"
+                        android:text="About this App"
                         android:textColor="#8C2E27"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -207,8 +202,7 @@
                         android:padding="20dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/right_arrow"
-                        app:tint="#EA907A"
-                        tools:ignore="ContentDescription" />
+                        app:tint="#EA907A" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -228,8 +222,7 @@
                         android:layout_centerVertical="true"
                         android:padding="10dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/privacy_policy"
-                        tools:ignore="ContentDescription" />
+                        android:src="@drawable/privacy_policy" />
 
                     <TextView
                         android:id="@+id/tvPrivacyPolicy"
@@ -247,8 +240,7 @@
                         android:text="Privacy Policy"
                         android:textColor="#8C2E27"
                         android:textSize="25sp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/arrow2"
@@ -259,8 +251,7 @@
                         android:padding="20dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/right_arrow"
-                        app:tint="#EA907A"
-                        tools:ignore="ContentDescription" />
+                        app:tint="#EA907A" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -280,8 +271,7 @@
                         android:layout_centerVertical="true"
                         android:padding="10dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/terms_and_conditions"
-                        tools:ignore="ContentDescription" />
+                        android:src="@drawable/terms_and_conditions" />
 
                     <TextView
                         android:id="@+id/tvTermsAndCondition"
@@ -299,8 +289,7 @@
                         android:text="Terms &amp; Conditions"
                         android:textColor="#8C2E27"
                         android:textSize="25sp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/arrow3"
@@ -311,8 +300,7 @@
                         android:padding="20dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/right_arrow"
-                        app:tint="#EA907A"
-                        tools:ignore="ContentDescription" />
+                        app:tint="#EA907A" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -332,8 +320,7 @@
                         android:layout_centerVertical="true"
                         android:padding="10dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/ratings"
-                        tools:ignore="ContentDescription" />
+                        android:src="@drawable/ratings" />
 
                     <TextView
                         android:id="@+id/tvRatings"
@@ -351,8 +338,7 @@
                         android:text="Rate this App"
                         android:textColor="#8C2E27"
                         android:textSize="25sp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/arrow4"
@@ -363,8 +349,7 @@
                         android:padding="20dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/right_arrow"
-                        app:tint="#EA907A"
-                        tools:ignore="ContentDescription" />
+                        app:tint="#EA907A" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -384,8 +369,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/more_apps"
-                        tools:ignore="ContentDescription" />
+                        android:src="@drawable/more_apps" />
 
                     <TextView
                         android:id="@+id/tvMoreApps"
@@ -403,8 +387,7 @@
                         android:text="More Apps from Us"
                         android:textColor="#8C2E27"
                         android:textSize="25sp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText" />
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/arrow5"
@@ -415,8 +398,7 @@
                         android:padding="20dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/right_arrow"
-                        app:tint="#EA907A"
-                        tools:ignore="ContentDescription" />
+                        app:tint="#EA907A" />
 
                 </RelativeLayout>
 
