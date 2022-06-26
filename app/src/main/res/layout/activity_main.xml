@@ -1,6 +1,416 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeActivity">
+
+        <RelativeLayout
+
+            android:id="@+id/appIntroRL"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/teal_700">
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/square"
+                android:backgroundTint="#0018675F"
+                android:src="@drawable/ic_launcher_foreground"
+                app:tint="#22DCCA" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/appLogo"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:padding="5dp"
+                    android:text="WhatsApp\nStatus Saver"
+                    android:textColor="#22DCCA"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_below="@id/appIntroRL"
+            android:id="@+id/selectWhatsapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/reWhatsAppNormal"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/square"
+                android:backgroundTint="#05317C">
+
+                <ImageView
+                    android:id="@+id/whatsappIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/whatsapp_logo"
+                    app:tint="#677BED" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/whatsappIcon"
+                    android:layout_centerHorizontal="true"
+                    android:text="WhatsApp"
+                    android:textColor="#677BED"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv1"
+                    android:layout_centerHorizontal="true"
+                    android:text="( normal )"
+                    android:textColor="#677BED"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/reWhatsAppBusiness"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/square"
+
+                android:backgroundTint="#0A400C">
+
+                <ImageView
+                    android:id="@+id/whatsappIcon2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/whatsapp_logo"
+                    app:tint="#6CC594" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/whatsappIcon2"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="WhatsApp\nBusiness"
+                    android:textColor="#6CC594"
+                    android:textSize="22sp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectWhatsapp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:scrollIndicators="right"
+            tools:targetApi="M"
+            android:scrollbarSize="5dp">
+
+            <RelativeLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/relAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/square"
+                    android:backgroundTint="@color/backgroundColor">
+
+                    <ImageView
+                        android:id="@+id/infoIcon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_info" />
+
+                    <TextView
+                        android:id="@+id/tvAbout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toStartOf="@id/arrow1"
+                        android:layout_toEndOf="@id/infoIcon"
+                        android:gravity="center"
+                        android:text="About this App"
+                        android:textColor="#8C2E27"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/arrow1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/right_arrow"
+                        app:tint="#EA907A" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@id/relAbout"
+                    android:id="@+id/relPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square"
+                    android:backgroundTint="@color/backgroundColor"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/privacyPolicyIcon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/privacy_policy" />
+
+                    <TextView
+                        android:id="@+id/tvPrivacyPolicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toStartOf="@id/arrow2"
+                        android:layout_toEndOf="@id/privacyPolicyIcon"
+                        android:gravity="center"
+                        android:text="Privacy Policy"
+                        android:textColor="#8C2E27"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/arrow2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/right_arrow"
+                        app:tint="#EA907A" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/relTermsAndCondition"
+                    android:layout_below="@id/relPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square"
+                    android:backgroundTint="@color/backgroundColor"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/termsAndConditionIcon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/terms_and_conditions" />
+
+                    <TextView
+                        android:id="@+id/tvTermsAndCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toStartOf="@id/arrow3"
+                        android:layout_toEndOf="@id/termsAndConditionIcon"
+                        android:gravity="center"
+                        android:text="Terms &amp; Conditions"
+                        android:textColor="#8C2E27"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/arrow3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/right_arrow"
+                        app:tint="#EA907A" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@id/relTermsAndCondition"
+                    android:id="@+id/relRatings"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square"
+                    android:backgroundTint="@color/backgroundColor"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/icRatings"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ratings" />
+
+                    <TextView
+                        android:id="@+id/tvRatings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toStartOf="@id/arrow4"
+                        android:layout_toEndOf="@id/icRatings"
+                        android:gravity="center"
+                        android:text="Rate this App"
+                        android:textColor="#8C2E27"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/arrow4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/right_arrow"
+                        app:tint="#EA907A" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@id/relRatings"
+                    android:id="@+id/relMoreApps"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square"
+                    android:backgroundTint="@color/backgroundColor"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:scaleType="fitCenter"
+                        android:padding="10dp"
+                        android:id="@+id/icMoreApps"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/more_apps" />
+
+                    <TextView
+                        android:id="@+id/tvMoreApps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toStartOf="@id/arrow5"
+                        android:layout_toEndOf="@id/icMoreApps"
+                        android:gravity="center"
+                        android:text="More Apps from Us"
+                        android:textColor="#8C2E27"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/arrow5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/right_arrow"
+                        app:tint="#EA907A" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+
+</layout>
