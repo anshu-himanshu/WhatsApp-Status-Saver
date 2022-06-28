@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,8 +45,7 @@ public class VideoFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         binding.refreshLayout.setOnRefreshListener(VideoFragment.this);
         getData();
 
-        adapter = new WhatsappVideosAdapter(list, getActivity());
-        binding.rvVideoStatus.setAdapter(adapter);
+
         binding.refreshLayout.setRefreshing(false);
         return binding.getRoot();
 
@@ -58,8 +58,6 @@ public class VideoFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         String targetPath;
         String targetPathBusiness;
 
-
-
         if (SDK_INT >= Build.VERSION_CODES.R) {
             targetPath = Environment.getExternalStorageDirectory() +
                     File.separator + "Android/media/com.whatsapp/WhatsApp/Media/.Statuses";
@@ -68,9 +66,17 @@ public class VideoFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                     File.separator + "WhatsApp/Media/.Statuses";
         }
 
+        new Handler().post(new Runnable(){
 
-        File targetDirector = new File(targetPath);
-        File[] allFiles = targetDirector.listFiles();
+            WhatsappStatusModel model;
+
+            @Override
+            public void run() {
+
+
+
+                File targetDirector = new File(targetPath);
+                File[] allFiles = targetDirector.listFiles();
 
 
 
@@ -91,6 +97,19 @@ public class VideoFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                         }
                     }
                 }
+                getActivity().runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                        adapter = new WhatsappVideosAdapter(list, getActivity());
+                        binding.rvVideoStatus.setAdapter(adapter);
+                    }
+                });
+            }
+        });
+
+
+
+
 
 
 
@@ -118,18 +137,15 @@ public class VideoFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         if (allFilesBusiness != null) {
             for (int i = 0; i < allFilesBusiness.length; i++) {
                 File file = null;
-                if (allFiles != null) {
-                    file = allFiles[i];
+             //   if (allFiles != null) {
+            //        file = allFiles[i];
                 }
 
-                if (Uri.fromFile(file).toString().endsWith(".mp4")) {
+             //   if (Uri.fromFile(file).toString().endsWith(".mp4")) {
 
                 }
             }
-        }
 
-
-    }
 
 
     @Override

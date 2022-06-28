@@ -40,8 +40,7 @@ public class ImageFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
         getData();
 
-        adapter = new WhatsappImagesAdapter(list, getActivity());
-        binding.rvStatus.setAdapter(adapter);
+
 
         binding.refreshLayout.setRefreshing(false);
         binding.refreshLayout.setOnRefreshListener(ImageFragment.this);
@@ -103,6 +102,13 @@ public class ImageFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                         }
                     }
                 }
+                getActivity().runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                        adapter = new WhatsappImagesAdapter(list, getActivity());
+                        binding.rvStatus.setAdapter(adapter);
+                    }
+                });
             }
         }).start();
         // for WhatsApp Business
