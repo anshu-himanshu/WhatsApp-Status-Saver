@@ -18,12 +18,12 @@ Don't forget to star⭐ the repo if you like what you see😉.
 
 <p align="center">
   
-  <img src=https://user-images.githubusercontent.com/88643441/175808689-44d284ed-6db4-4623-a2a2-79d9902002fd.png width="150" height="300" alt="Screenshot 1">
-  <img src=https://user-images.githubusercontent.com/88643441/175808690-a5ed98c4-8da5-402c-9ae2-424459f4b5a4.png width="150" height="300" alt="Screenshot 2">
-  <img src=https://user-images.githubusercontent.com/88643441/175808695-e91d31cc-2b62-4b55-a335-2f299eff6e04.png width="150" height="300" alt="Screenshot 3">
-  <img src=https://user-images.githubusercontent.com/88643441/175808694-c68e260e-1b09-4411-8178-1ad89f42d711.png width="150" height="300" alt="Screenshot 4">
-  <img src=https://user-images.githubusercontent.com/88643441/175808692-b647f33b-7fad-4adb-b782-8cd3bb9c32e4.png width="150" height="300" alt="Screenshot 5">
-  <img src=https://user-images.githubusercontent.com/88643441/175808696-9166f62b-c50c-43a7-9139-c82d85319d9e.png width="150" height="300" alt="Screenshot 1">
+  <img src=https://user-images.githubusercontent.com/88643441/175808689-44d284ed-6db4-4623-a2a2-79d9902002fd.png width="200" height="400" alt="Screenshot 1">
+  <img src=https://user-images.githubusercontent.com/88643441/175808690-a5ed98c4-8da5-402c-9ae2-424459f4b5a4.png width="200" height="400" alt="Screenshot 2">
+  <img src=https://user-images.githubusercontent.com/88643441/175808695-e91d31cc-2b62-4b55-a335-2f299eff6e04.png width="200" height="400" alt="Screenshot 3">
+  <img src=https://user-images.githubusercontent.com/88643441/175808694-c68e260e-1b09-4411-8178-1ad89f42d711.png width="200" height="400" alt="Screenshot 4">
+  <img src=https://user-images.githubusercontent.com/88643441/175808692-b647f33b-7fad-4adb-b782-8cd3bb9c32e4.png width="200" height="400" alt="Screenshot 5">
+  <img src=https://user-images.githubusercontent.com/88643441/175808696-9166f62b-c50c-43a7-9139-c82d85319d9e.png width="200" height="400" alt="Screenshot 1">
 </p>
 
 ## License
