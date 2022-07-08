@@ -16,7 +16,7 @@ Don't forget to star⭐ the repo if you like what you see😉.
 
 ## Screenshots
 
-<p align="center">
+<p float="left">
   
   <img src=https://user-images.githubusercontent.com/88643441/175808689-44d284ed-6db4-4623-a2a2-79d9902002fd.png width="200" height="400" alt="Screenshot 1">
   <img src=https://user-images.githubusercontent.com/88643441/175808690-a5ed98c4-8da5-402c-9ae2-424459f4b5a4.png width="200" height="400" alt="Screenshot 2">
